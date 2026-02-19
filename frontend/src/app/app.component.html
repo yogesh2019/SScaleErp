@@ -1,28 +1,31 @@
-<div class="container">
+<div class="layout">
+
+  <!-- Header -->
   <header class="header">
-    <h1>Small Scale ERP</h1>
-    <p>Inventory • Stock • LPN Tracking • Orders</p>
+    <div class="brand">
+      <span class="logo">SS</span>
+      <div class="title">
+        <h1>Small Scale ERP</h1>
+        <p>Inventory & Operations Management</p>
+      </div>
+    </div>
   </header>
 
-  <section class="modules">
-    <div class="card">
-      <h2>Inventory</h2>
-      <p>Manage products and stock levels.</p>
-    </div>
+  <div class="main">
 
-    <div class="card">
-      <h2>LPN Management</h2>
-      <p>Track License Plate Numbers efficiently.</p>
-    </div>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a routerLink="/inventory" routerLinkActive="active">Inventory</a>
+      <a routerLink="/lpn" routerLinkActive="active">LPN Management</a>
+      <a routerLink="/orders" routerLinkActive="active">Orders</a>
+      <a routerLink="/reports" routerLinkActive="active">Reports</a>
+    </aside>
 
-    <div class="card">
-      <h2>Orders</h2>
-      <p>Handle purchase and sales orders.</p>
-    </div>
+    <!-- Content -->
+    <section class="content">
+      <router-outlet></router-outlet>
+    </section>
 
-    <div class="card">
-      <h2>Reports</h2>
-      <p>View stock and transaction analytics.</p>
-    </div>
-  </section>
+  </div>
+
 </div>
