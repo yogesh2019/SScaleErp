@@ -1,0 +1,15 @@
+{
+  "name": "Angular14-Node16",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "16",
+      "nodeGypDependencies": true
+    }
+  },
+
+  "forwardPorts": [4200],
+
+  "postCreateCommand": "npm install -g @angular/cli@14.2.12"
+}
