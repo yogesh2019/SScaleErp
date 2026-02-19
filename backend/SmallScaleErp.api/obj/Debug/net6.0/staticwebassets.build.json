@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "eXmHXsMxAgT5zL7EO2i8AOF6NSbI0Jf4oRq6OSCoqgQ=",
+  "Source": "SmallScaleErp.api",
+  "BasePath": "_content/SmallScaleErp.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

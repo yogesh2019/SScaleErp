@@ -1,15 +1,15 @@
 {
-  "name": "Angular14-Node16",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "name": "Angular14-Dotnet6",
+
+  "image": "mcr.microsoft.com/devcontainers/dotnet:6.0",
 
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
-      "version": "16",
-      "nodeGypDependencies": true
+      "version": "16"
     }
   },
 
-  "forwardPorts": [4200],
+  "forwardPorts": [4200, 5000, 5001],
 
   "postCreateCommand": "npm install -g @angular/cli@14.2.12"
 }
