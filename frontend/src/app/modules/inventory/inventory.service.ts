@@ -15,7 +15,7 @@ export interface InventoryItem {
 })
 export class InventoryService {
 
-  private apiUrl = 'http://localhost:5000/api/inventory';
+  private apiUrl = '/api/inventory';
 
   constructor(private http: HttpClient) {}
 

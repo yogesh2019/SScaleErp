@@ -16,13 +16,27 @@ namespace SmallScaleErp.api.Controllers
             _context = context;
         }
 
-        // GET: api/inventory
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            var items = await _context.InventoryItems.ToListAsync();
-            return Ok(items);
-        }
+        // GET: api/inventory?page=1&pageSize=5
+[HttpGet]
+public async Task<IActionResult> Get(int page = 1, int pageSize = 5)
+{
+    var totalRecords = await _context.InventoryItems.CountAsync();
+
+    var items = await _context.InventoryItems
+        .OrderBy(i => i.Id)
+        .Skip((page - 1) * pageSize)
+        .Take(pageSize)
+        .ToListAsync();
+
+    return Ok(new
+    {
+        totalRecords,
+        page,
+        pageSize,
+        data = items
+    });
+}
+
 
         // POST: api/inventory
         [HttpPost]
