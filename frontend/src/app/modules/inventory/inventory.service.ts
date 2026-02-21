@@ -12,6 +12,13 @@ export interface InventoryItem {
   warehouse: string;
 }
 
+export interface PagedResult {
+  totalRecords: number;
+  page: number;
+  pageSize: number;
+  data: InventoryItem[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,7 +28,9 @@ export class InventoryService {
 
   constructor(private http: HttpClient) {}
 
-  getInventory(): Observable<any> {
-    return this.http.get(this.apiUrl);
+  getInventory(page: number = 1, pageSize: number = 5): Observable<PagedResult> {
+    return this.http.get<PagedResult>(
+      `${this.apiUrl}?page=${page}&pageSize=${pageSize}`
+    );
   }
 }
