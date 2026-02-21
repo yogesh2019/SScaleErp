@@ -11,10 +11,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAngular", policy =>
+    options.AddPolicy("AllowFrontend", policy =>
     {
         policy
-            .SetIsOriginAllowed(origin => true)
+            .WithOrigins(
+                "https://sscaleerp.onrender.com",   // production frontend
+                "https://scaling-bassoon-pp6jjgrg9j736vvq.github.dev" // codespaces dev
+            )
             .AllowAnyHeader()
             .AllowAnyMethod();
     });

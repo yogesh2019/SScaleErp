@@ -1,1 +1,5 @@
 backend/SmallScaleErp.api/appsettings.Development.json
+backend/SmallScaleErp.api/appsettings.json
+frontend/src/environments/environment.ts
+frontend/src/environments/environment.ts
+frontend/src/environments/environment.ts
